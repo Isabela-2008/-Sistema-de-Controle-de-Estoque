@@ -1,0 +1,104 @@
+Enunciado
+Objetivo: Criar e gerenciar um banco de dados para o controle de estoque, incluindo a administração de fornecedores, produtos e pedidos de reposição.
+
+Passos:
+
+Criar o Banco de Dados:
+
+Crie um banco de dados chamado SistemaControleEstoque.
+Criar Tabelas:
+
+Fornecedores: Armazena informações sobre os fornecedores.
+id_fornecedor (INT, AUTO_INCREMENT, PRIMARY KEY)
+nome_fornecedor (VARCHAR(100), NOT NULL)
+contato_fornecedor (VARCHAR(100), NOT NULL)
+Produtos: Armazena informações sobre os produtos.
+id_produto (INT, AUTO_INCREMENT, PRIMARY KEY)
+nome_produto (VARCHAR(100), NOT NULL)
+quantidade_em_estoque (INT, NOT NULL)
+preco (DECIMAL(10, 2), NOT NULL)
+id_fornecedor (INT, FOREIGN KEY referenciando Fornecedores(id_fornecedor))
+PedidosReposicao: Armazena informações sobre os pedidos de reposição de produtos.
+id_pedido (INT, AUTO_INCREMENT, PRIMARY KEY)
+id_produto (INT, FOREIGN KEY referenciando Produtos(id_produto))
+quantidade_reposta (INT, NOT NULL)
+data_pedido (DATE, NOT NULL)
+Inserir Dados:
+
+Adicione registros nas tabelas Fornecedores, Produtos e PedidosReposicao.
+Consultar Dados:
+
+Liste todos os produtos em estoque.
+Liste todos os pedidos de reposição.
+Liste todas as informações dos fornecedores.
+Liste produtos com informações de fornecedores.
+Atualizar Dados:
+
+Atualize a quantidade de produtos em estoque após receber um novo pedido de reposição.
+Deletar Dados:
+
+Exclua um produto descontinuado.
+Exclua um fornecedor que não faz mais parte da empresa.
+
+# Sistema de Controle de Estoque
+
+Este projeto configura um banco de dados para gerenciar o controle de estoque, incluindo fornecedores, produtos e pedidos de reposição.
+
+## Estrutura do Banco de Dados
+
+### Tabelas
+
+1. **Fornecedores**
+   - `id_fornecedor` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome_fornecedor` (VARCHAR(100), NOT NULL)
+   - `contato_fornecedor` (VARCHAR(100), NOT NULL)
+
+2. **Produtos**
+   - `id_produto` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome_produto` (VARCHAR(100), NOT NULL)
+   - `quantidade_em_estoque` (INT, NOT NULL)
+   - `preco` (DECIMAL(10, 2), NOT NULL)
+   - `id_fornecedor` (INT, FOREIGN KEY referenciando `Fornecedores(id_fornecedor)`)
+
+3. **PedidosReposicao**
+   - `id_pedido` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `id_produto` (INT, FOREIGN KEY referenciando `Produtos(id_produto)`)
+   - `quantidade_reposta` (INT, NOT NULL)
+   - `data_pedido` (DATE, NOT NULL)
+
+## Operações
+
+1. **Criação do Banco de Dados e Tabelas**
+
+   Execute o script SQL fornecido para criar o banco de dados `SistemaControleEstoque` e as tabelas `Fornecedores`, `Produtos`, e `PedidosReposicao`.
+
+2. **Inserção de Dados**
+
+   Adicione registros nas tabelas para inserir fornecedores, produtos e pedidos de reposição.
+
+3. **Consultas e Relatórios**
+
+   - Liste todos os produtos em estoque.
+   - Liste todos os pedidos de reposição.
+   - Liste todas as informações dos fornecedores.
+   - Liste produtos com informações de fornecedores.
+
+4. **Atualização de Dados**
+
+   - Atualize a quantidade de produtos em estoque após receber um novo pedido de reposição.
+
+5. **Exclusão de Dados**
+
+   - Exclua um produto descontinuado.
+   - Exclua um fornecedor que não faz mais parte da empresa.
+
+## Executando o Script SQL
+
+1. Conecte-se ao servidor MySQL.
+2. Copie e cole o código SQL fornecido em um cliente MySQL.
+3. Execute o script para criar e gerenciar o banco de dados `SistemaControleEstoque`.
+
+## Notas
+
+- Certifique-se de que o banco de dados e as tabelas estejam limpos antes de executar comandos de inserção e exclusão para evitar conflitos.
+
